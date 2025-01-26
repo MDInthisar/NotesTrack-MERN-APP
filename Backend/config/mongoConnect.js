@@ -2,11 +2,10 @@ import mongoose from "mongoose";
 
 const mongoConnect =async ()=>{
     try{
-        await mongoose.connect('mongodb://localhost:27017/ToDo')
+        await mongoose.connect(process.env.MONGODB_CONNECTION_URL)
         console.log('MONGODB CONNECTED');
     }catch(error){
         console.log('MONGO ERROR');
-        
     }
    
     
